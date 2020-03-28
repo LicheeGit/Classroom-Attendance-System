@@ -1,0 +1,7 @@
+<!--pages/canNotReg_t/canNotReg_t.wxml-->
+<view  class='content'>
+<text>抱歉,</text>
+<text>本版本暂未开放注册{{"\n"}}</text>
+<text>请联系管理员或返回重新选择</text>
+</view>
+<button bindtap='back' type='primary'>返回</button>

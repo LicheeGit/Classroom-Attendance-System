@@ -1,0 +1,49 @@
+<!--pages/start/start.wxml-->
+<view>
+  <text style="font-size:17px;">欢迎来到考勤界面，请点按下面的按钮开启考勤</text>
+  <input type='text' bindinput='getDeviceId' value='{{bDeviceId}}' hidden='{{startKaoqin}}' placeholder='蓝牙设备id：'></input>
+  <input type='text' bindinput='getLessonToken' value='{{lessonToken}}' hidden='{{startKaoqin}}'  placeholder='考勤口令：'></input>
+  <button bindtap='getToken' disabled='{{gotToken}}' hidden='{{startKaoqin}}' open-type='getLocation'>获取权限</button>
+  <button bindtap='startKq' disabled="{{disableCheckToken}}" hidden='{{startKaoqin}}'  bindtap='checkToken'>检查口令</button>
+  <button bindtap='startKq' disabled="{{disableSKq}}">开始考勤</button>
+  <button bindtap='endKq' disabled='{{disableEkq}}'>结束考勤</button>
+</view>
+<view class='card' hidden='{{notStart}}'>
+  <text>已有{{studentsNum}}人签到</text>
+  <view>已签到名单：</view>
+  <view>
+    <scroll-view scroll-y="true" class='text-box list'>
+      <text>{{textLog}}</text>
+    </scroll-view>
+  </view>
+</view>
+<view class='card' hidden='{{notGetTotalNum}}'>
+  <text>还有{{totalNum-studentsNum}}人未签到</text>
+  <view>未签到名单：</view>
+  <!--view>
+    <scroll-view scroll-y="true" class='text-box list'>
+      <text>{{notPresentList}}</text>
+    </scroll-view>
+  </view-->
+  <checkbox-group bindchange="checkboxChange">
+    <label class='checkbox' wx:for="{{notPresentArray}}">
+      <checkbox value='{{item}}' checked='{{item.checked}}' /> {{item}}
+    </label>
+  </checkbox-group>
+</view>
+<view class='card' hidden='{{notStart}}'>
+  <text>考勤统计：</text>
+  <view>应到{{totalNum}}人，实到{{studentsNum}}人，请假{{qingJiaNum}}人，请勾选请假学生</view>
+  <block wx:for="{{queQinArray}}">
+    <text>{{item}}</text>
+  </block>
+</view>
+<view class="function-button-div2">
+  <button type="primary" class='function-button_left' bindtap="refreshList">刷新</button>
+  <button type="primary" class='function-button_right' disabled='{{notGetStuList}}' bindtap='getUnpresentList' bindlongpress='goToNewWin'>获取未签到学生</button>
+  <button type="primary" class='function-button_a' bindtap="startClear">清空log日志</button>
+  <button type="primary" class='function-button_a' bindtap="getUnpresent" hidden='{{notGetTotalNum}}'>显示缺勤名单</button>
+</view>
+<view>
+
+</view>

@@ -1,0 +1,9 @@
+/* pages/login/login.wxss */
+.type_text{
+  display: flex;
+  color: #008000;
+  margin-top: 20rpx;
+}
+button{
+  margin-top: 20rpx;
+}

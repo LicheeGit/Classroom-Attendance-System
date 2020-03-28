@@ -1,0 +1,6 @@
+/* pages/success/success.wxss */
+.content {
+  margin: 50% 5%;
+  color: green;
+  height: 10%;
+}

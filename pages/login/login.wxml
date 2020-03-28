@@ -1,0 +1,13 @@
+<!-- login.wxml -->
+<camera
+  device-position="front"
+  flash="off"
+  binderror="error"
+  style="width: 100%; height: 300px;"
+></camera>
+<button type="primary" bindtap="takePhoto">拍照</button>
+<view class='type_text'>预览（点击图片输入考勤口令）</view>
+<modal hidden="{{hiddenModelInput}}" title="请输入考勤口令" bindconfirm="login" confirm-text="签到" bindcancel="cancel">
+<input placeholder='考勤口令：' bindinput='setLessonToken' value="{{lessonToken}}"></input>
+</modal>
+<image mode="widthFix" src="{{src}}" bindtap='inputToken'></image>

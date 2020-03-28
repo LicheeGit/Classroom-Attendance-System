@@ -1,0 +1,15 @@
+/* pages/canNotReg_t/canNotReg_t.wxss */
+.content {
+color: black;
+font-family: monospace;
+font-size: 40;
+text-align: center;
+font-weight: 15;
+margin-top: 155rpx;
+}
+button {
+  align-items: center;
+  margin-top: 300rpx;
+  width: 80%;
+  height: 10%;
+}

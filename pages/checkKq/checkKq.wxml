@@ -1,0 +1,17 @@
+<!--pages/checkKq/checkKq.wxml-->
+<text>{{lessonToken}}</text>
+<button bindtap='getUp'>获取未考勤学生名单</button>
+<modal hidden="{{hiddenModal}}" title="请确认口令{{lessonToken}}是否正确" confirm-text="正确" cancel-text="错误" bindconfirm="confirm" bindcancel="cancel"/>
+<view>
+  <checkbox-group bindchange="checkboxChange">
+    <label class='checkbox' wx:for="{{notPresentArray}}">
+      <checkbox value='{{item}}' checked='{{item.checked}}'/>
+      {{item}}
+      </label>
+  </checkbox-group>
+</view>
+<text>考勤统计：应到{{totalNum}}人，实到{{studentsNum}}人，请假{{qingJiaNum}}人，请勾选请假学生</text>
+<button bindtap='getUnpresent'>显示缺勤名单</button>
+<block wx:for="{{queQinArray}}">
+<text>{{item}}</text>
+</block>

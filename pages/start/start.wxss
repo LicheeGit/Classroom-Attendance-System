@@ -1,0 +1,48 @@
+/* pages/start/start.wxss */
+.card {
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0,0,0,.3);
+}
+.list {
+  max-height: 45vh;
+}
+.function-button-div2 {
+	width: 100%;
+	position: relative;
+	top: 20px;	
+}
+/*左边的功能按钮*/
+.function-button_left {
+	width: 45%;
+	height: 44px;
+	/*border: 1px solid #f0ad4e;
+	background-color: #f0ad4e;*/
+	float: left;
+	left: 1%;
+}
+/*右边的功能按钮*/
+.function-button_right {
+	width: 45%;
+	height: 44px;
+	/*border: 1px solid #f0ad4e;
+	background-color: #f0ad4e;*/
+	float: left;
+	left: 8%;
+}
+
+.function-button_a {
+  width: 88%;
+	height: 44px;
+	/*border: 1px solid #f0ad4e;
+	background-color: #f0ad4e;*/
+	float: left;
+	left: 6%;
+  top:10px;
+}
+
+input {
+  margin: 2% 0;
+}

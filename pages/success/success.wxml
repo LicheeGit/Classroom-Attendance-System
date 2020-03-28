@@ -1,0 +1,4 @@
+<!--pages/success/success.wxml-->
+<view class='content'>
+<text>签到成功，请关闭小程序，做好上课准备</text>
+</view>

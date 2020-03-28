@@ -1,0 +1,26 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='type_text'>
+<text>欢迎使用考勤系统，请选择你的身份</text>
+</view>
+<view class='p_type1'>
+  <button plain='true' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' bindtap='setGroupS'>
+    <image src='../../images/student.jpg'></image>
+  </button>
+  <text class='type_text'>我是学生</text>
+</view>
+<view class='p_type2'>
+  <button plain='true' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' bindtap='setGroupT' bindlongpress='setAllowRegT'>
+    <image src='../../images/teacher.jpg'></image>
+  </button>
+  <text class='type_text'>我是老师</text>
+</view>
+<!--view>
+  <button wx:if="{{canIUse}}" open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo' type='primary'>授权</button>
+  <view wx:else>请升级微信版本</view>
+  <button bindtap='btnreg'>使用须知</button>
+</view-->
+<view>
+  <modal hidden="{{hiddenPass}}" title="您已注册，请输入密码" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <input hidden="{{hiddenPass}}" type='text' placeholder='密码：' bindinput='setPassword' value='{{password}}'></input>
+  </modal>
+</view>
